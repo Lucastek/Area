@@ -1,0 +1,92 @@
+@import url('https://db.onlinewebfonts.com/c/95cecf452d3208890088a5b4c19c7ecf?family=Helvetica+Neue+ME');
+@import url('https://db.onlinewebfonts.com/c/4387b781fdcc752283b72bdc76757065?family=All+Round+Gothic');
+
+.login-button-facebook {
+  font-family: 'Raleway';
+  border-radius: 50px;
+  color: white;
+  background-color: #1877f2;
+  border-style: none;
+  width: 15em;
+  height: 30px;
+  font-size: 25px;
+  padding-bottom: 40px;
+  padding-top: 10px;
+  margin-top: 20px;
+  font-weight: 600;
+  transition: background-color 1s;
+  cursor: pointer;
+  outline: none !important;
+  box-shadow: 0px 0px 13px 1px rgba(0, 0, 0, 0.45);
+}
+
+.login-button-facebook:hover {
+  background-color: #438ceb;
+}
+
+.fb-bg {
+  background-image: url('../../../resource/darkfbbg.png');
+  min-height: 100%;
+  min-width: 1024px;
+  width: 100%;
+  height: auto;
+  position: fixed;
+  padding-top: 200px;
+  top: 0;
+  left: 0;
+}
+
+.fb-title {
+  margin-top: -10px;
+  color: white;
+  font-family: 'Helvetica Neue ME', 'sans-serif';
+  font-weight: 600;
+  font-size: 2em;
+  text-align: right;
+  padding-right: 10px;
+}
+
+.fb-widget {
+  height: 15em;
+  border-style: none;
+  border-radius: 5px;
+  outline: none !important;
+  box-shadow: 0px 0px 13px 1px rgba(0, 0, 0, 0.45);
+  background-color: rgba($color: #212121, $alpha: 0.98);
+}
+
+.fb-title-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.fb-content-container {
+  font-family: 'All Round Gothic', 'sans-serif';
+  color: white;
+  font-weight: 500;
+  font-size: 25px;
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.fb-content {
+  font-size: 40px;
+  color: #1877f2;
+}
+
+.fb-content-name {
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  color: white;
+}
+
+.fb-username-text {
+  margin-top: 5%;
+  font-family: 'All Round Gothic', 'sans-serif';
+  font-size: 3em;
+  font-weight: 600;
+  color: #1877f2;
+}

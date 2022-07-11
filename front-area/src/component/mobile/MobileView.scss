@@ -1,0 +1,41 @@
+.mobile-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+.mobile-grid {
+    display: flex;
+    justify-content: center;
+}
+
+.mobile-dl-button {
+    outline: none !important;
+    border-radius: 50px;
+    border-width: 2px;
+    background-color: white;
+    border-color: black;
+    font-family: 'Raleway';
+    font-weight: 700;
+    transition-property: inherit;
+    transition: 0.5s;
+    padding: 10px;
+    margin: 50px;
+}
+
+.mobile-dl-button:hover {
+    border-color: transparent;
+    background-color: black;
+    color: white;
+}
+
+.mobile-dl-text {
+    padding-left: 10px;
+}
+
+.mobile-warn-text {
+    font-family: 'Raleway';
+    font-weight: 500;
+}

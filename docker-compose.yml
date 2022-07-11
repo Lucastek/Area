@@ -1,0 +1,43 @@
+version: '3'
+
+services:
+  area-front:
+    container_name: "area-front"
+    image: area-front
+    build:
+      context: ./front-area
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+
+  area-database:
+    image: mongo
+    container_name: "area-database"
+    hostname: mongodb
+    restart: always
+    environment:
+      - MONGO_INIT_ROOT_USERNAME=${MONGO_USER}
+      - MONGO_INIT_ROOT_PASSWORD=${MONGO_PASSWORD}
+      - MONGO_INITDB_DATABASE=${MONGO_DATABASE}
+
+  area-api:
+    container_name: "area-api"
+    image: area-api
+    stdin_open: true
+    tty: true
+    build:
+      context: ./api-area
+      dockerfile: Dockerfile
+    links:
+      - area-database
+    ports:
+      - "8080:8080"
+
+
+volumes:
+  area-database-data:
+    name: area-database-data
+
+networks:
+  default:
+    name: area-network

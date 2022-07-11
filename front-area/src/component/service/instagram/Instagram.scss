@@ -1,0 +1,62 @@
+@import url("https://db.onlinewebfonts.com/c/1e7e97d0da36ea1b00a66348a43dfb26?family=Proxima+Nova+Th");
+.login-button-instagram {
+    font-family: 'Raleway';
+    border-radius: 50px;
+    color: white;
+    background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+    border-style: none;
+    width: 15em;
+    height: 30px;
+    font-size: 25px;
+    padding-bottom: 40px;
+    padding-top: 10px;
+    margin-top: 20px;
+    font-weight: 600;
+    opacity: 1;
+    transition: opacity 1s;
+    outline: none !important;
+    cursor: pointer;
+    box-shadow: 0px 0px 13px 1px rgba(0,0,0,0.45);
+}
+
+.login-button-instagram:hover {
+    opacity: 0.75;
+}
+
+.ig-bg {
+    background-image: url('../../../resource/darkigbg.png');
+    min-height: 100%;
+    min-width: 1024px;
+    width: 100%;
+    height: auto;
+    position: fixed;
+    padding-top: 200px;
+    top: 0;
+    left: 0;
+  }
+  
+  .ig-title {
+    padding-top: 10px;
+    color:rgb(0, 0, 0);
+    font-family: 'Proxima Nova Th';
+    font-weight: 900;
+    font-size: 2em;
+    text-align: right;
+    padding-right: 10px;
+    text-decoration: overline rgb(255, 255, 255);
+  
+  }
+  
+  .ig-widget {
+    height: 15em;
+    border-style: none;
+    border-radius: 5px;
+    outline: none !important;
+    box-shadow: 0px 0px 13px 1px rgba(0,0,0,0.45);
+    background-color: rgba($color: #ffffff, $alpha: 0.97);
+  }
+  
+  .ig-title-container {
+    display: flex;
+    justify-content: space-between;
+  }

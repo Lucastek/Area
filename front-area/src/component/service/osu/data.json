@@ -1,0 +1,26 @@
+[
+  {
+      "user_id": "0",
+      "username": "0",
+      "join_date": "0",
+      "count300": "0",
+      "count100": "0",
+      "count50": "0",
+      "playcount": "0",
+      "ranked_score": "0",
+      "total_score": "0",
+      "pp_rank": "0",
+      "level": "0",
+      "pp_raw": "0",
+      "accuracy": "0",
+      "count_rank_ss": "0",
+      "count_rank_ssh": "0",
+      "count_rank_s": "0",
+      "count_rank_sh": "0",
+      "count_rank_a": "0",
+      "country": "0",
+      "total_seconds_played": "0",
+      "pp_country_rank": "0",
+      "events": []
+  }
+]

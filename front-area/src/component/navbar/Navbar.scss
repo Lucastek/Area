@@ -1,0 +1,26 @@
+.navbutton {
+    border-style: none;
+    background-color: transparent;
+    outline: none !important;
+    font-family: 'Raleway';
+    font-weight: 700;
+    font-size: 25px;
+    margin-left: 4%;
+    margin-right: 4%;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    color: rgb(204, 204, 204);
+    cursor: pointer;
+    transition: color 1s
+}
+
+.navbutton:hover:enabled {
+    color: #ffffff;
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #42413f;
+}

@@ -1,0 +1,181 @@
+@import url("https://db.onlinewebfonts.com/c/6aa06a9a432b8417171f60d8351aa310?family=Torus+Notched+SemiBold");
+@import url("https://db.onlinewebfonts.com/c/6a17929c7360288d1242981da7712dc3?family=Torus+Notched");
+.osubg {
+  background-image: url('../../../resource/darkosubg.png');
+  min-height: 100%;
+  min-width: 1024px;
+  width: 100%;
+  height: auto;
+  position: fixed;
+  padding-top: 200px;
+  top: 0;
+  left: 0;
+}
+
+.viewcontainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.title {
+  padding-top: 10px;
+  color: white;
+  font-family: 'Torus Notched SemiBolda', sans-serif;
+  font-weight: 700;
+  font-size: 2em;
+  text-align: right;
+  padding-right: 10px;
+  text-decoration: overline rgb(255, 215, 85);
+}
+
+.content {
+  color: rgb(255, 255, 255);
+  font-family: 'Torus Notched SemiBold', sans-serif;
+  font-weight: 200;
+  text-align: right;
+  padding-right: 150px;
+  font-size: 2em;
+}
+
+.level-content {
+  color: rgb(255, 255, 255);
+  font-family: 'Torus Notched SemiBold', sans-serif;
+  font-size: 2em;
+}
+
+.rank {
+  text-align: left;
+  text-decoration: overline #ff66ab;
+  padding-top: 30px;
+}
+
+.widget {
+  height: 15em;
+  border-style: none;
+  border-radius: 5px;
+  outline: none !important;
+  box-shadow: 0px 0px 13px 1px rgba(0, 0, 0, 0.45);
+  background-color: rgba($color: #2a2226, $alpha: 0.98);
+}
+
+.perfect {
+  text-decoration: overline rgb(0, 128, 179);
+}
+
+.good {
+  text-decoration: overline rgb(0, 179, 0);
+}
+
+.bad {
+  text-decoration: overline #ffc400;
+}
+
+.content-centered {
+  color: rgb(255, 255, 255);
+  font-family: 'Torus Notched SemiBold', sans-serif;
+  font-weight: 200;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 32px;
+  font-size: 2em;
+}
+
+.player-rank {
+  margin-top: 30px;
+}
+
+.space {
+  padding-top: 26px;
+}
+
+.close-button {
+  background-image: url('../../../resource/osudisable.png');
+  width: 25px;
+  height: 25px;
+  margin-left: 10px;
+  margin-top: 10px;
+  background-size: cover;
+  border-style: none;
+  outline: none !important;
+  cursor: pointer;
+}
+
+.title-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.level-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.playcount-container {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.playcount {
+  margin-left: 100px;
+}
+
+.playcounttext {
+  text-decoration: overline#FF66AB;
+}
+
+.accuracy-container {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.accuracy {
+  margin-left: 100px;
+}
+
+.accuracytext {
+  text-decoration: overline#FF66AB;
+}
+
+.osu-levelbox {
+  width: 170px;
+  height: 170px;
+  background-image: url('../../../resource/osulevelbox.png');
+  background-size: cover;
+  border-style: none;
+  background-color: transparent;
+  border-width: 0px;
+  border-color: transparent;
+  outline: none !important;
+}
+
+.level {
+  font-family: 'Torus Notched SemiBold', sans-serif;
+  font-size: 50px;
+  color: white;
+}
+
+.add-widget-osu {
+  font-family: 'Torus Notched SemiBold', sans-serif;
+  margin-top: 50px;
+  color: white;
+  text-decoration: overline #ff66ab;
+}
+
+.username-box-osu {
+  width: 83%;
+  height: auto;
+  font-family: 'Torus Notched SemiBold', sans-serif;
+  outline: none !important;
+  border-style: none;
+  box-shadow: 0px 0px 13px 1px rgba(0, 0, 0, 0.45);
+  background-color: #2a2226;
+  color: white;
+  font-size: 50px;
+  margin-bottom: 0.5em;
+}

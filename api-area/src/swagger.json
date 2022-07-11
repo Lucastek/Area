@@ -1,0 +1,570 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "version": "1.0.0",
+        "title": "Documentation of Area",
+        "description": "This is the documentation of our Area"
+    },
+    "tags": [
+        {
+            "name": "About.json",
+            "description": "About.json"
+        }
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/about.json": {
+            "get": {
+                "tags": [
+                    "About.json"
+                ],
+                "summary": "Display the about.json with all feature in our database",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "description": "Error when query about"
+                    }
+                }
+            }
+        },
+        "/login": {
+            "post": {
+                "tags": [
+                    "Login"
+                ],
+                "summary": "Login on Area",
+                "requestBody": {
+                    "description": "Information for logging",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/definitions/login"
+                            }
+                        }
+                    }
+                },
+                "description": "Login in the Area",
+                "responses": {
+                    "200": {
+                        "description": "Login OK"
+                    },
+                    "400": {
+                        "description": "missing property: userId"
+                    },
+                    "401": {
+                        "description": "Wrong Credentials..."
+                    }
+                }
+            }
+        },
+        "/register": {
+            "post": {
+                "tags": [
+                    "Register"
+                ],
+                "summary": "Register account on Area",
+                "requestBody": {
+                    "description": "Information for registering",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/definitions/login"
+                            }
+                        }
+                    }
+                },
+                "description": "unique JWT created for the user",
+                "responses": {
+                    "200": {
+                        "description": "Register OK"
+                    },
+                    "400": {
+                        "description": "User with email: {email used} already exist."
+                    },
+                    "500": {
+                        "description": "FAIL instantiation of services"
+                    }
+                }
+            }
+        },
+        "/logout": {
+            "post": {
+                "tags": [
+                    "Logout"
+                ],
+                "summary": "User Logout",
+                "description": "The user when logout, return on the Login page",
+                "responses": {
+                    "200": {
+                        "description": "Logout OK"
+                    }
+                }
+            }
+        },
+        "/services": {
+            "get": {
+                "tags": [
+                    "Services"
+                ],
+                "summary": "Get service if is false or true in the database",
+                "description": "Use the cookie to pick the JWT, to define wich user is it.",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "description": "missing property: userId"
+                    },
+                    "401": {
+                        "description": "Wrong Auth Token..."
+                    },
+                    "500": {
+                        "description": "Can't retrieve services"
+                    }
+                }
+            }
+        },
+        "/service": {
+            "post": {
+                "tags": [
+                    "Services"
+                ],
+                "summary": "Create service",
+                "requestBody": {
+                    "description": "Service Object",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/definitions/Service"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "new service created"
+                    },
+                    "500": {
+                        "description": "Can't retrieve services"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Services"
+                ],
+                "summary": "Activate or Desactivate service",
+                "description": "Use the cookie to pick the JWT, to define wich user is it.",
+                "requestBody": {
+                    "description": "Service Object",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/definitions/ServiceUpdate"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "description": "missing one of the properties: serviceName, serviceState"
+                    },
+                    "401": {
+                        "description": "Wrong Auth Token..."
+                    },
+                    "500": {
+                        "description": "Can't update service"
+                    }
+                }
+            }
+        },
+        "/service/facebook/setToken/accesToken": {
+            "post": {
+                "parameters": [
+                    {
+                        "name": "accessToken",
+                        "in": "path",
+                        "required": true,
+                        "description": "AccessToken of Facebook",
+                        "type": "string"
+                    }
+                ],
+                "tags": [
+                    "Facebook"
+                ],
+                "summary": "SetToken API Facebook",
+                "description": "Use the cookie to pick the JWT, to define wich user is it.",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/service/facebook/user": {
+            "get": {
+                "tags": [
+                    "Facebook"
+                ],
+                "summary": "API Facebook",
+                "description": "Use the cookie to pick the JWT, to define wich user is it.",
+                "responses": {
+                    "200": {
+                        "description": "Information on .json"
+                    },
+                    "400": {
+                        "description": "Error"
+                    }
+                }
+            }
+        },
+        "/service/github/oauth-callback": {
+            "get": {
+                "tags": [
+                    "Github"
+                ],
+                "summary": "API Github",
+                "description": "Use the cookie to pick the JWT, to define wich user is it.",
+                "responses": {
+                    "200": {
+                        "description": "Ok"
+                    },
+                    "400": {
+                        "description": "Error"
+                    }
+                }
+            }
+        },
+        "/service/github/getUser": {
+            "get": {
+                "tags": [
+                    "Github"
+                ],
+                "summary": "API Github",
+                "description": "Use the cookie to pick the JWT, to define wich user is it.",
+                "responses": {
+                    "200": {
+                        "description": "Information on .json"
+                    },
+                    "400": {
+                        "description": "Error / User has no github token"
+                    }
+                }
+            }
+        },
+        "/service/google/setToken/:accessToken": {
+            "post": {
+                "parameters": [
+                    {
+                        "name": "accessToken",
+                        "in": "path",
+                        "required": true,
+                        "description": "AccessToken of Google",
+                        "type": "string"
+                    }
+                ],
+                "tags": [
+                    "Youtube"
+                ],
+                "summary": "API Youtube",
+                "description": "Give access token to receive Refresh Token",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/service/google/chanel": {
+            "get": {
+                "tags": [
+                    "Youtube"
+                ],
+                "summary": "API Youtube",
+                "description": "Use the cookie to pick the JWT, to define wich user is it.",
+                "responses": {
+                    "201": {
+                        "description": "Information on .json"
+                    },
+                    "400": {
+                        "description": "Error"
+                    },
+                    "401": {
+                        "description": "No channel found."
+                    }
+                }
+            }
+        },
+        "/service/osu/user": {
+            "post": {
+                "tags": [
+                    "OSU"
+                ],
+                "summary": "Send Information to API OSU",
+                "requestBody": {
+                    "description": "OSU Body",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/definitions/OSU"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            },
+            "get": {
+                "tags": [
+                    "OSU"
+                ],
+                "summary": "API OSU",
+                "responses": {
+                    "200": {
+                        "description": "Information on .json"
+                    },
+                    "500": {
+                        "description": "Error"
+                    }
+                }
+            }
+        },
+        "/user/service": {
+            "get": {
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "description": "UserID",
+                        "type": "string"
+                    }
+                ],
+                "tags": [
+                    "User Services"
+                ],
+                "summary": "Get which services were saved",
+                "description": "Use the cookie to pick the JWT, to define wich user is it.",
+                "responses": {
+                    "201": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "description": "User not found or Error in request"
+                    },
+                    "401": {
+                        "description": "Wrong Auth Token..."
+                    }
+                }
+            },
+            "post": {
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "description": "ID of the service",
+                        "type": "number"
+                    }
+                ],
+                "tags": [
+                    "User Services"
+                ],
+                "summary": "Save services in database",
+                "description": "Use the cookie to pick the JWT, to define wich user is it.",
+                "responses": {
+                    "20": {
+                        "description": "OK"
+                    },
+                    "201": {
+                        "description": "service saved!"
+                    },
+                    "400": {
+                        "description": "Error in request"
+                    },
+                    "401": {
+                        "description": "Wrong Auth Token..."
+                    }
+                }
+            }
+        },
+        "/action/:id": {
+            "parameters": [
+                {
+                    "name": "id",
+                    "in": "path",
+                    "required": true,
+                    "description": "ID of the service",
+                    "type": "string"
+                }
+            ],
+            "post": {
+                "tags": [
+                    "Action/Reaction"
+                ],
+                "summary": "Action about the service",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "required": true,
+                        "description": "Service with id",
+                        "schema": {
+                            "$ref": "#/definitions/id"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "description": "Action body",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/definitions/Action-Reaction"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "description": "Error"
+                    }
+                }
+            }
+        },
+        "/reaction/:id": {
+            "parameters": [
+                {
+                    "name": "id",
+                    "in": "path",
+                    "required": true,
+                    "description": "ID of the service",
+                    "type": "string"
+                }
+            ],
+            "post": {
+                "tags": [
+                    "Action/Reaction"
+                ],
+                "summary": "Reaction about the service",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "required": true,
+                        "description": "Service with id",
+                        "schema": {
+                            "$ref": "#/definitions/id"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "description": "Reaction body",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/definitions/Action-Reaction"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "description": "Error"
+                    }
+                }
+            }
+        },
+        "/setToken": {
+            "post": {
+                "tags": [
+                    "Token"
+                ],
+                "summary": "Set the token",
+                "description": "Set the token of the user"
+            }
+        }
+    },
+    "definitions": {
+        "id": {
+            "properties": {
+                "uuid": {
+                    "type": "string"
+                }
+            }
+        },
+        "login": {
+            "properties": {
+                "email": {
+                    "type": "string"
+                },
+                "password": {
+                    "type": "string"
+                }
+            }
+        },
+        "Action-Reaction": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                }
+            }
+        },
+        "Service": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string"
+                }
+            }
+        },
+        "ServiceUpdate": {
+            "type": "object",
+            "properties": {
+                "serviceName": {
+                    "type": "string"
+                },
+                "serviceState": {
+                    "type": "boolean"
+                }
+            }
+        },
+        "OSU": {
+            "type": "object",
+            "properties": {
+                "u": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}

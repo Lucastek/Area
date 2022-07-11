@@ -1,0 +1,7 @@
+**/.env
+**/.envrc
+**/node_modules
+**/dist
+api-area/server.log
+api-area/server-combined.log
+front-desktop/area-desktop*
